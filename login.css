@@ -7,6 +7,7 @@ input:focus {
     border-width: 2px;
     border-color: blue;
     margin: auto;
+    margin-top: 5vh;
     width: 60%;
     text-align: center;
 }
