@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Menu</title>
+		<link rel="stylesheet" type="text/css" href="invent.css">
+	</head>
+	<body>
+		<div>
+			<ul>
+				<label>First Name</label>
+				<li><input id="firstName" type="text"></li>
+				<label>Last Name</label>
+				<li><input id="lastName" type="text"></li>
+				<label>Party Affiliation</label><li>
+				<input id="affil" type="number" value="0"></li>
+								
+			</ul>
+			<div>
+				<input id="insert" type="submit" value="Insert">
+				<input id="retrieve" type="submit" value="Retrieve">
+				<input id="clear" type="submit" value="Clear">
+			</div>
+			<p id="error" class="found">Item not found!</p>
+			<p id="inserted" class="subsucceed">Item inserted!</p>
+			<p id="notinserted" class="subfail">Item not inserted!</p>
+		</div>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+		<script src='mongoose.js'></script>
+	</body>
+</html>
