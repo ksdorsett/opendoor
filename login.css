@@ -1,0 +1,17 @@
+input:focus {
+    background-color: yellow;
+}
+
+.container {
+    border-style: solid;
+    border-width: 2px;
+    border-color: blue;
+    margin: auto;
+    margin-top: 5vh;
+    width: 60%;
+    text-align: center;
+}
+
+body {
+    background-color: #3399ff;
+}
