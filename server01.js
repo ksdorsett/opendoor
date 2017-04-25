@@ -5,14 +5,14 @@
 	"use strict";
 
 	var main = function() {
-		var express = require("express"),
+		var express = require('express'),
 				bodyParser = require("body-parser"),
 				mongoose = require("mongoose"),
 				app = express(),
                 path = require("path");
 		mongoose.Promise = global.Promise;
 		
-		app.use(express.static(__dirname, {index: 'login.html'}));
+		app.use(express.static(__dirname, {index: 'Login.html'}));
 		app.use(bodyParser.urlencoded({ extended: true }));
 		
 		mongoose.connect("mongodb://localhost/login");
