@@ -13,6 +13,12 @@ var onSubmit = function() {
     }
 };
 
+var onLogout = function() {
+    document.cookie = "username=; path=/";
+    alert("logged out");
+    window.location.replace("Login.html");
+};
+
 
 //getCookie copied from W3Schools
 function getCookie(cname) {
