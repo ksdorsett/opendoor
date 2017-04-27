@@ -20,10 +20,20 @@
 		var PersonSchema = mongoose.Schema({
 			"firstName" : String,
 			"lastName" : String,
-			"affil" : String});
+			"affil" : String,
+            "userName": String,
+            "password": String});
 		
 		var Person = mongoose.model("Person", PersonSchema); 
-		
+        
+        var ContentSchema=mongoose.Schema({
+           "username" : String,
+            "content" : String,
+            "timeOfPost" : Date
+        });	
+        
+        var Content = mongoose.model("Content", ContentSchema); 
+        
         app.get("/", function(req, res){
             res.sendFile(path.join(__dirname + '/Login.html'));
         })
@@ -39,7 +49,9 @@
 		app.post("/putPerson", function(req, res) {
 			var newPerson = new Person({"firstName" : req.body.firstName,
 								    "lastName" : req.body.lastName,
-									"affil" : req.body.affil});
+									"affil" : req.body.affil,
+                                    "userName" : req.body.userName,
+                                    "password" : req.body.password});
 			newPerson.save(function(err, result) {
 				if (err) {
 					console.log(err);
@@ -49,6 +61,20 @@
 			});
 		});
 		
+        app.post("/putContent", function(req, res) {
+			var newContent = new Content({ "username" : req.body.username,
+								    "content" : req.body.content,
+                                    "timeOfPost": req.body.timeOfPost});
+			newContent.save(function(err, result) {
+				if (err) {
+					console.log(err);
+					res.send("ERROR");
+				} 
+				else res.send("UPDATED");	
+			});
+		});
+        
+        
 		app.listen(3000);
 		console.log("listening on port 3000");
 		
