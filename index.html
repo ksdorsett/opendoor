@@ -6,34 +6,38 @@
         <link rel="stylesheet" type="text/css" href="login.css">
 	</head>
 	<body>
+        <img src="/images/banner.png">
+        <br>
+        <!--<div id="innerContainer">-->
         <a href="Login.html">Login Here!</a>
-		<div>
-			<ul>
-                <label>Username</label>
-				<li><input id="username" type="text"></li>
-				<label>Password</label>
-				<li><input id="password" type="text"></li>
-				<label>First Name</label>
-				<li><input id="firstName" type="text"></li>
-				<label>Last Name</label>
-				<li><input id="lastName" type="text"></li>
-				<label>Party Affiliation</label><li>
+		<div id="info">
+            
+                <label>Username</label><br>
+				<input id="username" type="text"><br>
+				<label>Password</label><br>
+				<input id="password" type="text"><br>
+				<label>First Name</label><br>
+				<input id="firstName" type="text"><br>
+				<label>Last Name</label><br>
+				<input id="lastName" type="text"><br>
+				<label>Party Affiliation</label><br>
 				<select id="affil">
                     <option value="Democrat">Democrat</option>
                     <option value="Republican">Republican</option>
                     <option value="Independent">Independent</option>
                 </select>
-								
-			</ul>
+				<br>				
 			<div>
-				<input id="insert" type="submit" value="Insert">
-				<input id="retrieve" type="submit" value="Retrieve">
+                <br>
+				<input id="insert" type="submit" value="Create Account">
+				<!--input id="retrieve" type="submit" value="Retrieve">
 				<input id="clear" type="submit" value="Clear">
 			</div>
 			<p id="error" class="found">Item not found!</p>
 			<p id="inserted" class="subsucceed">Item inserted!</p>
-			<p id="notinserted" class="subfail">Item not inserted!</p>
+			<p id="notinserted" class="subfail">Item not inserted!</p>-->
 		</div>
+        </div>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 		<script src='mongoose.js'></script>
 	</body>

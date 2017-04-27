@@ -7,14 +7,30 @@
     margin-left: 10vw;
     background-color: white;
 }
+
 #postBox {
     width:70vw;
     margin-left: 10vw;
     margin-top: 5vh;
 }
+
 #postBtn {
     width:10vw;
 }
+
 body {
     background-color: #3399ff;
+}
+
+img{
+    max-width: 100%;
+    display: block;
+    margin: auto;
+}
+
+#innerContainer{
+    width:70vw;
+    margin-left:10vw;
+    background-color: white;/**Change**/
+    height: 100vh;
 }

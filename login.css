@@ -15,3 +15,11 @@ input:focus {
 body {
     background-color: #3399ff;
 }
+
+#info{
+    position: absolute;
+    width: 15vw;
+    left: 42.5vw;
+    text-align: center;
+    background-color: white;/**Change**/
+}
