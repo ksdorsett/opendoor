@@ -5,6 +5,7 @@
     font:16px/26px Georgia, Garamond, Serif;
     overflow-y:scroll;
     margin-left: 10vw;
+    background-color: white;
 }
 #postBox {
     width:70vw;
@@ -13,4 +14,7 @@
 }
 #postBtn {
     width:10vw;
+}
+body {
+    background-color: #3399ff;
 }
