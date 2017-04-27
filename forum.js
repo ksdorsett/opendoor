@@ -1,8 +1,14 @@
 var onSubmit = function() {
     var newPost = $('#postBox').val();
     var username = getCookie("username");
+    var unixStamp = Math.round(+new Date()/1000);
     alert("username="+username);
     if (username != "") {
+        //submit http post request with json object username/content
+        //call route putContent
+        $.post("/putContent", { "username" : username,
+								    "content" : newPost,
+                                    "timeOfPost": unixStamp});
         alert("Posted by "+username);
         alert(newPost);
     //this is where we will have to connect to database and add message (newPost) before reloading page
