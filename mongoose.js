@@ -1,5 +1,6 @@
 // Use jQuery post() and getJSON() methods to communicate with 
 // the routes defined via server01.
+//PersonSchema
 
 (function() {
 	"use strict";
@@ -9,8 +10,8 @@
 				lastName = $('#lastName').val(),
 				affil = $('#affil').val(),
 				newPerson = {"firstName" : firstName,
-									 "lastName" : lastName,
-									 "affil" : affil
+				             "lastName" : lastName,
+				             "affil" : affil
 									};
 		$.post("put", newPerson, function(result) {
 			if (result === 'UPDATED') {
