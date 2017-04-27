@@ -9,7 +9,7 @@ var onSubmit = function() {
     location.reload();
     }else{
         alert("Login Boroski!");
-        window.open("Login.html","_self");
+        window.location.replace("Login.html");
     }
 };
 
