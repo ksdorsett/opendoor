@@ -17,9 +17,8 @@ body {
 }
 
 #info{
-    position: absolute;
-    width: 15vw;
-    left: 42.5vw;
+    width: 200px;
+    margin: auto;
     text-align: center;
     background-color: white;/**Change**/
 }
