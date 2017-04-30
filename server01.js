@@ -36,8 +36,15 @@
         
         app.get("/", function(req, res){
             res.sendFile(path.join(__dirname + '/Login.html'));
-            //console.out("username is " + req.body.username);
-        })
+        }
+      
+        app.get("/getPerson", function(req, res){
+            Person.find(req.query, function(err, item){
+                if (err) res.send("ERROR");
+                else res.send(item);
+            });
+        });
+        
         
 		// The field used here for getJSON() is req.query
 		//app.get("/getPerson", function(req, res) {
@@ -48,11 +55,13 @@
 //		});
 		
 		app.post("/putPerson", function(req, res) {
-			var newPerson = new Person({"firstName" : req.body.firstName,
-								    "lastName" : req.body.lastName,
-									"affil" : req.body.affil,
-                                    "userName" : req.body.userName,
-                                    "password" : req.body.password});
+			var newPerson = new Person(
+                {"firstName" : req.body.firstName,
+                 "lastName" : req.body.lastName,
+                 "affil" : req.body.affil,
+                 "userName" : req.body.userName,
+                 "password" : req.body.password}
+            );
 			newPerson.save(function(err, result) {
 				if (err) {
 					console.log(err);
@@ -62,10 +71,14 @@
 			});
 		});
 		
+        
+        
         app.post("/putContent", function(req, res) {
-			var newContent = new Content({ "username" : req.body.username,
-								    "content" : req.body.content,
-                                    "timeOfPost": req.body.timeOfPost});
+			var newContent = new Content(
+                { "username" : req.body.username, 
+                 "content" : req.body.content, 
+                 "timeOfPost": req.body.timeOfPost}
+            );
 			newContent.save(function(err, result) {
 				if (err) {
 					console.log(err);
@@ -74,6 +87,13 @@
 				else res.send("UPDATED");	
 			});
 		});
+        
+        
+        
+        
+        app.get("/checkUser", function(req, res){
+            res.sendFile(path.join(__dirname + '/Login.html'));
+        }        
         
         
 		app.listen(3000);
