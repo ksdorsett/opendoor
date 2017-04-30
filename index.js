@@ -27,6 +27,8 @@ var onSubmit = function() {
                                       "affil" : affil,
                                       "userName" : username,
                                       "password" : password});
+                document.cookie = "username="+username+"; path=/";
+                window.location.replace("forum.html");
             }else{
                 alert("All information is required");
             }
