@@ -9,20 +9,29 @@ var onSubmit = function() {
     var firstName = $('#firstName').val();
     var lastName = $('#lastName').val();
     var affil = $('#affil').val();
-    if (password==confirmPassword){
-        if (username != "" && password != "" && firstName != "" && lastName != "") {
-            $.post("/putPerson", {"firstName" : firstName,
-                                  "lastName" : lastName,
-                                  "affil" : affil,
-                                  "userName" : username,
-                                  "password" : password});
+    var inDatabase = checkDB(username);
+    if(inDatabase=="ERROR"){
+        if (password==confirmPassword){
+            if (username != "" && password != "" && firstName != "" && lastName != "") {
+                $.post("/putPerson", {"firstName" : firstName,
+                                      "lastName" : lastName,
+                                      "affil" : affil,
+                                      "userName" : username,
+                                      "password" : password});
+            }else{
+                alert("All information is required");
+            }
         }else{
-            alert("All information is required");
+            alert("Passwords must match");
         }
     }else{
-        alert("Passwords must match");
+        alert("Username taken");
     }
 };
+
+var checkDB = function(username) {
+    return $.get("/getPerson", username);
+}
 
 
 
