@@ -34,26 +34,18 @@
         
         var Content = mongoose.model("Content", ContentSchema); 
         
-        app.get("/", function(req, res){
-            res.sendFile(path.join(__dirname + '/Login.html'));
-        }
+    //    app.get("/", function(req, res){
+    //        res.sendFile(path.join(__dirname + '/Login.html'));
+    //    }
       
-        app.get("/getPerson", function(req, res){
-            Person.find(req.query, function(err, item){
-                if (err) res.send("ERROR");
-                else res.send(item);
-            });
-        });
+        app.get("/getPerson", function(req, res) {
+			Person.find(req.query, function(err, item) {
+				if (err) res.send("ERROR");
+				else res.send(item);
+			});
+		});
         
-        
-		// The field used here for getJSON() is req.query
-		//app.get("/getPerson", function(req, res) {
-//			Person.find(req.query, function(err, item) {
-//				if (err) res.send("ERROR");
-//				else res.send(item);
-//			});
-//		});
-		
+ 		
 		app.post("/putPerson", function(req, res) {
 			var newPerson = new Person(
                 {"firstName" : req.body.firstName,
@@ -91,9 +83,9 @@
         
         
         
-        app.get("/checkUser", function(req, res){
-            res.sendFile(path.join(__dirname + '/Login.html'));
-        }        
+     //   app.get("/checkUser", function(req, res){
+    //        res.sendFile(path.join(__dirname + '/Login.html'));
+    //    }        
         
         
 		app.listen(3000);

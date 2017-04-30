@@ -9,9 +9,18 @@ var onSubmit = function() {
     var firstName = $('#firstName').val();
     var lastName = $('#lastName').val();
     var affil = $('#affil').val();
-    var inDatabase = checkDB(username);
-    if(inDatabase=="ERROR"){
-        if (password==confirmPassword){
+    var url = 'getPerson?';
+    url += ('&userName=' + username);
+    //var inDatabase = 
+    $.getJSON(url, function(result) {
+	if (result.length) {
+        var foundUser = result[0];
+        alert(foundUser.userName);
+        alert("Username taken");
+    }
+        else {
+            alert("None found");
+            if (password==confirmPassword){
             if (username != "" && password != "" && firstName != "" && lastName != "") {
                 $.post("/putPerson", {"firstName" : firstName,
                                       "lastName" : lastName,
@@ -24,14 +33,9 @@ var onSubmit = function() {
         }else{
             alert("Passwords must match");
         }
-    }else{
-        alert("Username taken");
-    }
+        }
+		});
 };
-
-var checkDB = function(username) {
-    return $.get("/getPerson", username);
-}
 
 
 
