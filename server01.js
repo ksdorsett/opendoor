@@ -36,6 +36,7 @@
         
         app.get("/", function(req, res){
             res.sendFile(path.join(__dirname + '/Login.html'));
+            //console.out("username is " + req.body.username);
         })
         
 		// The field used here for getJSON() is req.query
