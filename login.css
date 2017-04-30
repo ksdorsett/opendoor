@@ -8,7 +8,7 @@ input:focus {
     border-color: blue;
     margin: auto;
     margin-top: 5vh;
-    width: 60%;
+    width: 200px/*60vw*/;
     text-align: center;
     background-color: white;
 }
@@ -18,7 +18,7 @@ body {
 }
 
 #info{
-    width: 200px;
+    width: 200px;/*60vw*/
     margin: auto;
     text-align: center;
     background-color: white;/**Change**/
@@ -35,4 +35,8 @@ img {
     max-width: 100%;
     display: block;
     margin: auto;
+}
+
+label{
+    font-weight: bold;
 }
