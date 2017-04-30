@@ -14,7 +14,7 @@ var onSubmit = function() {
             $.post("/putPerson", {"firstName" : firstName,
                                   "lastName" : lastName,
                                   "affil" : affil,
-                                  "userName" : userName,
+                                  "userName" : username,
                                   "password" : password});
         }else{
             alert("All information is required");
