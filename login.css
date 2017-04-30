@@ -3,12 +3,13 @@ input:focus {
 }
 
 .container {
+    position: relative;
     border-style: solid;
     border-width: 2px;
-    border-color: blue;
+    border-color: purple;
     margin: auto;
-    margin-top: 5vh;
     width: 200px/*60vw*/;
+    top: 200px;
     text-align: center;
     background-color: white;
 }
@@ -19,17 +20,24 @@ body {
 
 #info{
     width: 200px;/*60vw*/
-    margin: auto;
+    float:right;
     text-align: center;
-    background-color: white;/**Change**/
-    border-style: solid;
-    border-width: 2px;
-    border-color: blue;
+    border-left-style: solid;
+    border-left-color: purple;
+    border-left-width: 2px;
+    height: 300px;
+}
+
+#description{
+    width: 275px;
+    font-size: 20px;
+    
 }
 
 h1 {
     text-align: center;
 }
+
 
 img {
     max-width: 100%;
@@ -39,4 +47,30 @@ img {
 
 label{
     font-weight: bold;
+}
+#innerContainer{
+    position: relative;
+    top:150px;
+    width:500px;
+    height: 300px;
+    margin:auto;
+    background-color: white;/**Change**/
+    border-style: solid;
+    border-width: 2px;
+    border-color: purple;
+}
+
+#donkey{
+   width:10vw;
+   position: absolute;
+   right: 0%;
+    top:20px;
+}
+
+#elphant{
+    width:10vw;
+   position: absolute;
+   left: 0%;
+    top:20px;
+}
 }

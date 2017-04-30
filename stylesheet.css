@@ -19,7 +19,8 @@
 }
 
 body {
-    background-color: #3399ff;
+    background-image: url("images/background.jpg");
+    background-repeat: repeat;
 }
 
 img{
@@ -28,9 +29,12 @@ img{
     margin: auto;
 }
 
-#innerContainer{
-    width:70vw;
-    margin-left:10vw;
-    background-color: white;/**Change**/
-    height: 100vh;
+#banner{
+    position:absolute;
+    left:0;
+    width: 100%;
+    background: white;
+    top: 0;
+    margin: 0;
+    padding: 0;
 }
