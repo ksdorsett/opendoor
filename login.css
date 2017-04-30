@@ -27,3 +27,9 @@ body {
 h1 {
     text-align: center;
 }
+
+img {
+    max-width: 100%;
+    display: block;
+    margin: auto;
+}

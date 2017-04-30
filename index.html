@@ -6,16 +6,18 @@
         <link rel="stylesheet" type="text/css" href="login.css">
 	</head>
 	<body>
+        <a href="Login.html">Login Here!</a>
         <img src="images/banner.png">
         <br>
         <!--<div id="innerContainer">-->
-        <a href="Login.html">Login Here!</a>
 		<div id="info">
             
                 <label>Username</label><br>
 				<input id="username" type="text"><br>
 				<label>Password</label><br>
-				<input id="password" type="text"><br>
+				<input type="password" id="password" type="text"><br>
+                <label>Confirm Password</label><br>
+				<input type="password" id="confirmPassword" type="text"><br>
 				<label>First Name</label><br>
 				<input id="firstName" type="text"><br>
 				<label>Last Name</label><br>
@@ -29,7 +31,7 @@
 				<br>				
 			<div>
                 <br>
-				<input id="insert" type="submit" value="Create Account">
+				<input type="button" onclick=onSubmit() value="Create Account">
 				<!--input id="retrieve" type="submit" value="Retrieve">
 				<input id="clear" type="submit" value="Clear">
 			</div>
