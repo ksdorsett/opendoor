@@ -41,3 +41,14 @@ function getCookie(cname) {
     }
     return "";
 }
+
+var onLoad = function() {
+    var url = 'getContent?';
+    $.getJSON(url, function(result) {
+	if (result.length) {
+        for(int i=0;i<result.length;i++){
+        var foundContent = result[i];
+        alert(i+" : "foundContent.username+" : "foundContent.content+" : "
+             +foundContent.timeOfPost);
+    }
+}

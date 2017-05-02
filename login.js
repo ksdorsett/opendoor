@@ -14,7 +14,7 @@ var onSubmit = function() {
                 document.cookie = "username="+username+"; path=/";
                 window.location.replace("forum.html");
             }else{
-                alert("Access Denied");
+                alert("Please Register");
             }
         })
     }
