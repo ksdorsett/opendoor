@@ -38,3 +38,9 @@ img{
     margin: 0;
     padding: 0;
 }
+
+#logoutBtn{
+    position: fixed;
+    top:97vh;
+    left: 10w;
+}
