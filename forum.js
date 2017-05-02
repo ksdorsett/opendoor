@@ -47,9 +47,8 @@ var onLoad = function() {
     $.getJSON(url, function(result) {
 	if (result.length) {
         for(var i=0;i<result.length;i++){
-        var foundContent = result[i];
-        alert(i+" : "foundContent.username+" : "foundContent.content+" : "
-             +foundContent.timeOfPost);
+            var foundContent = result[i];
+            alert(foundContent.content);
         }
     }
     })
