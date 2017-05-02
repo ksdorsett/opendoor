@@ -40,7 +40,7 @@ function getCookie(cname) {
         }
     }
     return "";
-}
+};
 
 var onLoad = function() {
     var url = 'getContent?';
@@ -50,5 +50,7 @@ var onLoad = function() {
         var foundContent = result[i];
         alert(i+" : "foundContent.username+" : "foundContent.content+" : "
              +foundContent.timeOfPost);
+        }
     }
-}
+    })
+};
