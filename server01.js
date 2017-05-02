@@ -26,14 +26,7 @@
 		
 		var Person = mongoose.model("Person", PersonSchema); 
         
-        var ContentSchema=mongoose.Schema({
-           "username" : String,
-            "content" : String,
-            "timeOfPost" : Date
-        });	
-        
-        var Content = mongoose.model("Content", ContentSchema); 
-        
+    
     //    app.get("/", function(req, res){
     //        res.sendFile(path.join(__dirname + '/Login.html'));
     //    }
@@ -64,6 +57,20 @@
 		});
 		
         
+        var ContentSchema=mongoose.Schema({
+            "username" : String,
+            "content" : String,
+            "timeOfPost" : Date
+        });	
+        
+        var Content = mongoose.model("Content", ContentSchema); 
+        
+        app.get("/getContent", function(req, res) {
+			Content.find(req.query, function(err, item) {
+				if (err) res.send("ERROR");
+				else res.send(item);
+			});
+		});
         
         app.post("/putContent", function(req, res) {
 			var newContent = new Content(
