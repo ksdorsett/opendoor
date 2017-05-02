@@ -60,7 +60,7 @@
         var ContentSchema=mongoose.Schema({
             "username" : String,
             "content" : String,
-            "timeOfPost" : Date
+            "timeOfPost" : String
         });	
         
         var Content = mongoose.model("Content", ContentSchema); 
