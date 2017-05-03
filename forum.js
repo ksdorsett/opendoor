@@ -59,13 +59,36 @@ var dateify = function(date){
 }
 
 var onLoad = function() {
-    var url = 'getContent?';
-    $.getJSON(url, function(result) {
+    var foundUser;
+    $.getJSON('getContent', function(result) {
+    console.log(result);
 	if (result.length) {
-        for(var i=0;i<result.length;i++){
-            var foundContent = result[i];
-            $("#starterP").prepend("<p>"+foundContent.username+":    "+foundContent.content+"</p><p align=right>"+foundContent.timeOfPost+"</p> <hr>" );
-        }
+       colorStuff(0, result);
     }
     })
 };
+
+function colorStuff(counter, result){
+    end=result.length;
+    if(counter!=end){
+         var foundContent = result[counter];
+         $.getJSON('getPerson', {userName:foundContent.username}, function(result) {
+                var color="red";  
+                console.log(result);
+                foundUser=result[0];
+                
+                if(foundUser.affil=="Republican"){
+                    color="red";
+                }
+                else if(foundUser.affil=="Democrat"){
+                    color="blue";
+                }
+                else{
+                    color="purple";
+                }
+               
+                $("#starterP").prepend("<p style='color:"+color+";'>"+foundContent.username+":    "+foundContent.content+"</p><p align=right>"+foundContent.timeOfPost+"</p> <hr>" );
+            });
+         colorStuff(counter+1,result);
+    }
+}
