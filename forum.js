@@ -67,17 +67,17 @@ var onLoad = function() {
             var color = "purple";
                 var url2 = 'getPerson?';
                 url2 += ('&userName=' + foundContent.userName);
-                    $.getJSON(url, function(result) {
+                    $.getJSON(url2, function(result) {
 	                   if (result.length) {
                         var foundUser = result[0];
                            if(foundUser.affil=="Republican"){
                 color="red"
             }
             if(foundUser.affil=="Democrat"){
-                color="red"
+                color="blue"
             }
                 }})
-            $("#starterP").prepend("<p color="+color+">"+foundContent.username+":    "+foundContent.content+"</p><p align=right>"+foundContent.timeOfPost+"</p> <hr>" );
+            $("#starterP").prepend("<p style=color:"+color+";>"+foundContent.username+":    "+foundContent.content+"</p><p align=right>"+foundContent.timeOfPost+"</p> <hr>" );
         }
     }
     })
