@@ -10,6 +10,7 @@ var onSubmit = function() {
                 var foundUser = result[0];
                 alert(foundUser.userName);
                 alert(foundUser.password);
+                alert(foundUser.affil);
                 alert("Access Granted");
                 document.cookie = "username="+username+"; path=/";
                 window.location.replace("forum.html");

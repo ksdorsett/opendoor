@@ -39,7 +39,7 @@
 		});
         
  		
-		app.post("/putPerson", function(req, res) {
+		/*app.post("/putPerson", function(req, res) {
 			var newPerson = new Person(
                 {"firstName" : req.body.firstName,
                  "lastName" : req.body.lastName,
@@ -55,6 +55,13 @@
 				else res.send("UPDATED");	
 			});
 		});
+        */
+        app.post("/putPerson", function(req, res){
+            var newPerson = new Person(req.body);
+            newPerson.save(function(error, data){
+                if (error) console.log(error);
+            });
+        });
 		
         
         var ContentSchema=mongoose.Schema({
@@ -66,6 +73,7 @@
         var Content = mongoose.model("Content", ContentSchema); 
         
         app.get("/getContent", function(req, res) {
+            console.log("getting content...");
 			Content.find(req.query, function(err, item) {
 				if (err) res.send("ERROR");
 				else res.send(item);

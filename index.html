@@ -1,5 +1,5 @@
 <!doctype html>
-<html>
+<html lang=en ng-app="person">
 	<head>
 		<title>Open Door</title>
 		<link rel="stylesheet" type="text/css" href="stylesheet.css">
@@ -12,14 +12,15 @@
         </div>
         <br>
         <div id="innerContainer">
-		<div id="info" ng-controller="Person">
+		<div id="info"> 
+            <div ng-controller="Person">
             
                 <label>Username</label><br>
 				<input ng-model="userName" placeholder="Enter Username" type="text"><br>
 				<label>Password</label><br>
 				<input placeholder="Enter Password" ng-model="password" type="text"><br>
-               <!-- <label>Confirm Password</label><br>
-				<input placeholder="Confirm Password" id="confirmPassword" type="text"><br> -->
+                <label>Confirm Password</label><br>
+				<input placeholder="Confirm Password" ng-model="confirmPassword" type="text"><br>
 				<label>First Name</label><br>
 				<input ng-model="firstName" placeholder="Enter First Name" type="text"><br>
 				<label>Last Name</label><br>
@@ -33,8 +34,7 @@
 				<br>				
 			<div>
                 <br>
-				<button ng-disabled="!(userName.length && password.length && firstName.length && lastName.length)"
-							ng-click="add()">Add</button>
+				<button ng-click="add()">Add</button>
 				<!--input id="retrieve" type="submit" value="Retrieve">
 				<input id="clear" type="submit" value="Clear">
 			</div>
@@ -42,6 +42,7 @@
 			<p id="inserted" class="subsucceed">Item inserted!</p>
 			<p id="notinserted" class="subfail">Item not inserted!</p>-->
 		</div>
+            </div>
         </div>
         <div id="description">
         <ul>
@@ -54,6 +55,7 @@
         </div>
         
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-		<script src='index.js'></script>
-	</body>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.2/angular.min.js"></script>
+		<script src='angular.js'></script>
+    </body>
 </html>
